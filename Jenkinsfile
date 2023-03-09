@@ -27,8 +27,7 @@ pipeline {
 
     stage('Deliver') {
       steps {
-        sh '''sh \'mvn -Dmaven.aliyun.repository=http://maven.aliyun.com/nexus/content/groups/public/ clean install
-'''
+        sh 'sh mvn -Dmaven.aliyun.repository=http://maven.aliyun.com/nexus/content/groups/public/ clean install'
         sh './jenkins/scripts/deliver.sh'
       }
     }
